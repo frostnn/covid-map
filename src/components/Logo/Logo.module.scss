@@ -1,0 +1,19 @@
+.logo_block {
+  position: fixed;
+  z-index: 999;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  .logo_block_icon {
+    color: rgb(255, 60, 60);
+    padding: 0 5px;
+  }
+  .logo_block_title {
+    font-weight: 500;
+  }
+  .logo_block_title_map {
+    font-weight: 600;
+    color: rgb(255, 60, 60);
+  }
+}
