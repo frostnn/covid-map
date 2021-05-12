@@ -2,11 +2,61 @@
   position: absolute;
   top: 50px;
   right: 50px;
-  width: 400px;
+  width: 340px;
   min-height: 200px;
   padding: 15px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   font-size: 18px;
   color: #fff;
+  img {
+    max-width: 120px;
+  }
+  .info_block_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .info_block_body {
+    display: flex;
+    justify-content: space-between;
+  }
+  .info_block_total {
+    font-size: 18px;
+  }
+  .healthIcon_icon {
+    color: rgb(70, 163, 110);
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  .skullIcon_icon {
+    color: rgb(138, 150, 161);
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  .skullIcon_accountIcon {
+    font-size: 20px;
+    padding-right: 10px;
+  }
+  .skullIcon_bxTestTube {
+    font-size: 20px;
+    color: rgb(230, 230, 24);
+    padding-right: 10px;
+  }
+  .updateIcon_icon {
+    font-size: 20px;
+    padding-right: 10px;
+    color: rgb(114, 181, 236);
+  }
+  .info_block_day_title,
+  .info_block_total_title {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .info_block_day_item,
+  .info_block_total_item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+  }
 }
