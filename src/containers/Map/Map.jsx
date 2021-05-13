@@ -6,7 +6,8 @@ import LocationMarker from '../../components/LocationMarker';
 import Logo from '../../components/Logo';
 import { token } from '../../token/token';
 import styles from './Map.module.scss';
-const Map = ({ center, zoom, infoCovid }) => {
+import Worldinfo from '../../components/WorldInfo';
+const Map = ({ center, zoom, infoCovid, infoCovidWorld }) => {
   const [locationInfo, setLocationInfo] = useState(null);
   const [alertVisibility, setAlertVisibility] = useState(true);
   useEffect(() => {
@@ -17,6 +18,7 @@ const Map = ({ center, zoom, infoCovid }) => {
   return (
     <div className={styles.map_wrapper}>
       <Logo />
+      <Worldinfo infoCovidWorld={infoCovidWorld} />
       <GoogleMapReact bootstrapURLKeys={{ key: token }} defaultCenter={center} defaultZoom={zoom}>
         {infoCovid.map((items) => (
           <LocationMarker
