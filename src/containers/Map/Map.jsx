@@ -7,9 +7,13 @@ import Logo from '../../components/Logo';
 import { token } from '../../token/token';
 import styles from './Map.module.scss';
 import Worldinfo from '../../components/WorldInfo';
-const Map = ({ center, zoom, infoCovid, infoCovidWorld }) => {
+import Search from '../../components/Search';
+const Map = ({ center, zoom, infoCovid, infoCovidWorld, search, setSearch }) => {
   const [locationInfo, setLocationInfo] = useState(null);
   const [alertVisibility, setAlertVisibility] = useState(true);
+  const searchCoutry = infoCovid.filter((items) =>
+    items.country.toLowerCase().includes(search.toLowerCase()),
+  );
   useEffect(() => {
     setTimeout(() => {
       setAlertVisibility(false);
@@ -18,9 +22,11 @@ const Map = ({ center, zoom, infoCovid, infoCovidWorld }) => {
   return (
     <div className={styles.map_wrapper}>
       <Logo />
+      <Search setSearch={setSearch} search={search} listSearchCountry={searchCoutry} />
+
       <Worldinfo infoCovidWorld={infoCovidWorld} />
       <GoogleMapReact bootstrapURLKeys={{ key: token }} defaultCenter={center} defaultZoom={zoom}>
-        {infoCovid.map((items) => (
+        {searchCoutry.map((items) => (
           <LocationMarker
             lat={items.countryInfo.lat}
             lng={items.countryInfo.long}

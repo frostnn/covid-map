@@ -9,6 +9,7 @@ const CovidMap = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [infoCovid, setInfoCovid] = useState([]);
   const [infoCovidWorld, setInfoCovidWorld] = useState([]);
+  const [search, setSearch] = useState('');
   const getResult = async (url) => {
     const data = await getDataApi(url);
     if (data) {
@@ -34,7 +35,16 @@ const CovidMap = () => {
   }, []);
   return (
     <React.Fragment>
-      {isLoading ? <Loading /> : <Map infoCovid={infoCovid} infoCovidWorld={infoCovidWorld} />}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Map
+          infoCovid={infoCovid}
+          search={search}
+          setSearch={setSearch}
+          infoCovidWorld={infoCovidWorld}
+        />
+      )}
     </React.Fragment>
   );
 };
