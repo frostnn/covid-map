@@ -1,13 +1,12 @@
 import { Icon } from '@iconify/react';
-import roundCoronavirus from '@iconify-icons/ic/round-coronavirus';
 import styles from './LocationMarker.module.scss';
 import classNames from 'classnames';
-
+import virusIcon from '@iconify-icons/mdi/virus';
 const LocationMarker = ({ cases, onClick }) => {
   return (
     <div>
       <Icon
-        icon={roundCoronavirus}
+        icon={virusIcon}
         className={classNames(
           cases > 1000 && cases < 10000 ? styles.middle : '',
           cases > 10000 ? styles.high : '',

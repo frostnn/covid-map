@@ -8,16 +8,18 @@ const WorldInfo = ({ infoCovidWorld: { TotalConfirmed, TotalDeaths, TotalRecover
   return (
     <div className={styles.world_block}>
       <div className={styles.world_block_title}>World</div>
-      <div className={styles.world_block_total_item}>
-        <Icon icon={accountIcon} className={styles.skullIcon_accountIcon} />
-        {TotalConfirmed.toLocaleString()}
-      </div>
-      <div className={styles.world_block_total_item}>
-        <Icon icon={healthIcon} className={styles.healthIcon_icon} />
-        {TotalRecovered.toLocaleString()}
-      </div>
-      <div className={styles.world_block_total_item}>
-        <Icon icon={skullIcon} className={styles.skullIcon_icon} /> {TotalDeaths.toLocaleString()}
+      <div>
+        <div className={styles.world_block_total_item}>
+          <Icon icon={accountIcon} className={styles.skullIcon_accountIcon} />
+          {TotalConfirmed.toLocaleString()}
+        </div>
+        <div className={styles.world_block_total_item}>
+          <Icon icon={healthIcon} className={styles.healthIcon_icon} />
+          {TotalRecovered.toLocaleString()}
+        </div>
+        <div className={styles.world_block_total_item}>
+          <Icon icon={skullIcon} className={styles.skullIcon_icon} /> {TotalDeaths.toLocaleString()}
+        </div>
       </div>
     </div>
   );

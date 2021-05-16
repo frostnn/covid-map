@@ -26,7 +26,7 @@ const LocationInfoBox = ({
     <div className={styles.info_block}>
       <div className={styles.info_block_header}>
         <h1>{country}</h1>
-        <img src={flag} alt={country} />
+        {<img src={flag} alt={country} />}
       </div>
       <div className={styles.info_block_body}>
         <div className={styles.info_block_day}>

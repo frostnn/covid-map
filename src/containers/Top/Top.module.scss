@@ -1,0 +1,29 @@
+.top_block {
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  z-index: 999;
+  color: rgb(231, 231, 231);
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  .top_block_tabs {
+    display: flex;
+    justify-content: space-between;
+  }
+  .top_block_tabs_content {
+    display: none;
+  }
+}
+
+.tab_active {
+  color: rgb(241, 32, 32);
+}
+
+.top_block_tabs_content.tab_content_active {
+  display: block;
+}
