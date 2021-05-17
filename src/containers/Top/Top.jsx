@@ -18,26 +18,26 @@ const Top = ({ infoCovid }) => {
         <div
           className={classNames(styles.top_block_tabs_item, active === 1 && styles.tab_active)}
           onClick={() => toggleTab(1)}>
-          <div className={styles.top_block_tabs_item_title}>Cases</div>
           <div>
             <Icon icon={accountIcon} className={styles.skullIcon_icon} />
           </div>
+          <div className={styles.top_block_tabs_item_title}>Cases</div>
         </div>
         <div
           className={classNames(styles.top_block_tabs_item, active === 2 && styles.tab_active)}
           onClick={() => toggleTab(2)}>
-          <div className={styles.top_block_tabs_item_title}>Deaths</div>
           <div>
-            <Icon icon={skullIcon} className={styles.skullIcon_icon} />
+            <Icon icon={skullIcon} className={styles.deaths_icon} />
           </div>
+          <div className={styles.top_block_tabs_item_title}>Deaths</div>
         </div>
         <div
           className={classNames(styles.top_block_tabs_item, active === 3 && styles.tab_active)}
           onClick={() => toggleTab(3)}>
-          <div className={styles.top_block_tabs_item_title}>Recovered</div>
           <div>
-            <Icon icon={healthIcon} className={styles.skullIcon_icon} />
+            <Icon icon={healthIcon} className={styles.recovered_icon} />
           </div>
+          <div className={styles.top_block_tabs_item_title}>Recovered</div>
         </div>
       </div>
 
@@ -48,10 +48,10 @@ const Top = ({ infoCovid }) => {
         )}>
         {infoCovid
           .sort((a, b) => (a.cases > b.cases ? -1 : 1))
-          .map((items, i) =>
+          .map(({ country, cases, countryInfo: { _id, flag } }, i) =>
             i <= 9 ? (
-              <div>
-                {items.country} - {items.cases}
+              <div key={_id}>
+                <img src={flag} alt="" /> {country} - {cases.toLocaleString()}
               </div>
             ) : null,
           )}
@@ -64,10 +64,10 @@ const Top = ({ infoCovid }) => {
         )}>
         {infoCovid
           .sort((a, b) => (a.deaths > b.deaths ? -1 : 1))
-          .map((items, i) =>
+          .map(({ country, deaths, countryInfo: { _id, flag } }, i) =>
             i <= 9 ? (
-              <div>
-                {items.country} - {items.deaths}
+              <div key={_id}>
+                <img src={flag} alt="" /> {country} - {deaths.toLocaleString()}
               </div>
             ) : null,
           )}
@@ -80,10 +80,10 @@ const Top = ({ infoCovid }) => {
         )}>
         {infoCovid
           .sort((a, b) => (a.recovered > b.recovered ? -1 : 1))
-          .map((items, i) =>
+          .map(({ country, recovered, countryInfo: { _id, flag } }, i) =>
             i <= 9 ? (
-              <div>
-                {items.country} - {items.recovered}
+              <div key={_id}>
+                <img src={flag} alt="" /> {country} - {recovered.toLocaleString()}
               </div>
             ) : null,
           )}

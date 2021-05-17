@@ -1,20 +1,17 @@
-.logo_block {
-  position: fixed;
+.popover_block {
+  position: relative;
   z-index: 999;
-  top: 5px;
-  left: 10px;
-  display: flex;
-  align-items: center;
-  .logo_block_icon {
-    color: rgb(255, 60, 60);
-    padding: 0 5px;
-  }
-  .logo_block_title {
-    font-weight: 700;
-    font-size: 22px;
-  }
-  .logo_block_title_map {
-    font-weight: 600;
-    color: rgb(255, 60, 60);
+  .popover_block_content {
+    background: black;
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+    font-size: 10px;
+    position: absolute;
+    top: 25px;
+    min-width: 100px;
+    text-transform: initial;
+    text-align: left;
+    z-index: 999;
   }
 }

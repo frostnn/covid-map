@@ -1,6 +1,6 @@
 .top_block {
   position: absolute;
-  top: 200px;
+  top: 50px;
   left: 10px;
   z-index: 999;
   color: rgb(231, 231, 231);
@@ -18,10 +18,38 @@
   .top_block_tabs_content {
     display: none;
   }
+  .skullIcon_icon {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .recovered_icon {
+    font-size: 18px;
+    color: #46a36e;
+  }
+  .deaths_icon {
+    font-size: 18px;
+    color: #8a96a1;
+  }
+  .top_block_title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .top_block_tabs_content {
+    margin-top: 15px;
+    img {
+      max-width: 20px;
+      margin-right: 3px;
+    }
+  }
+  .top_block_tabs_item {
+    cursor: pointer;
+  }
 }
 
 .tab_active {
-  color: rgb(241, 32, 32);
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ff3c3c;
 }
 
 .top_block_tabs_content.tab_content_active {
